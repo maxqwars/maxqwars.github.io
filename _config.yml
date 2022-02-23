@@ -1,0 +1,24 @@
+title: QWARS 🗑 DEV
+email: maxqwars@gmail.com
+description: >-
+  Очередной блог написанный на Jekyll и стилизованный с помощью Bulma.
+baseurl: ""
+url: "https://maxqwars.github.io"
+author: Maxim "maxqwars" Maximenko
+lang: ru
+main_login: maxqwars
+
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+exclude:
+  - LICENSE
+  - .editorconfig
+  - js/
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - README.md

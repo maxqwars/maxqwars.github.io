@@ -1,0 +1,34 @@
+<header>
+  {%- assign default_paths = site.pages | map: "path" -%}
+  {%- assign page_paths = site.header_pages | default: default_paths -%}
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a href="{{ "/" | relative_url }}" class="navbar-item">
+          <img
+            src="/assets/img/brand.svg"
+            width="112"
+            height="28"
+          />
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      {%- if page_paths -%}
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          {%- for path in page_paths -%}
+          {%- assign my_page = site.pages | where: "path", path | first -%}
+          {%- if my_page.title -%}
+          <a href="{{ my_page.url | relative_url }}" class="navbar-item">{{ my_page.title | escape }}</a>
+          {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+      {%- endif -%}
+    </div>
+  </nav>
+</header>
