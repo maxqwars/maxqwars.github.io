@@ -8,6 +8,13 @@ import HomePageController from "./controllers/HomePageController";
 import HomePageView from "./views/HomePageView";
 import HomePageModel from "./models/HomePageModel";
 
+/* Register service worker */
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/assets/js/sw.js");
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initMenu();
   typeIt("#typing");

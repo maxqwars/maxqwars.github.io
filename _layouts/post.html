@@ -1,12 +1,13 @@
 ---
 layout: default
 ---
+
 <section class="section">
   <div class="block">
     <div class="container">
       <div class="has-text-centered">
         <h1 class="title" id="typing">{{ page.title | escape }}</h1>
-        <br>
+        <br />
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <h5 class="subtitle">{{ page.date | date: date_format }}</h5>
       </div>
@@ -16,8 +17,8 @@ layout: default
 
 <section class="section">
   <div class="container">
-    <div class="columns">
-      <div class="column">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
         <article class="content">{{ content }}</article>
       </div>
     </div>

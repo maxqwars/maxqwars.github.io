@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "watch": {
-    "build": "js/**/*.js"
+    "build": "js/**/*.js",
+    "build:sw": "js/sw.js"
   },
   "scripts": {
+    "build:sw": "esbuild js/sw.js --minify --bundle --external:node_modules/* --outfile=assets/js/sw.js",
     "build": "esbuild js/main.js --minify --bundle --external:node_modules/* --outfile=assets/js/main.min.js",
     "watch": "npm-watch",
     "start": "concurrently \"jekyll serve\" \"npx serve _site\" \"npm run watch\""
@@ -17,6 +19,10 @@
     "concurrently": "^7.0.0",
     "esbuild": "^0.14.23",
     "npm-watch": "^0.11.0",
-    "typeit": "^8.3.1"
+    "typeit": "^8.3.1",
+    "workbox-cacheable-response": "^6.5.0",
+    "workbox-expiration": "^6.5.0",
+    "workbox-routing": "^6.5.0",
+    "workbox-strategies": "^6.5.0"
   }
 }
