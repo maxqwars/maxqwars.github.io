@@ -1,13 +1,12 @@
 ---
 layout: default
 ---
-
 {%- include github_widget.html -%}
 
 {%- if site.posts.size > 0 -%}
 <section class="section">
   <div class="container">
-    <h1 class="title is-3">Обновления</h1>
+    <h1 class="title is-3">Блог</h1>
     <hr />
     <div class="columns is-multiline">
       {%- for post in site.posts -%}
@@ -32,14 +31,38 @@ layout: default
               {%- endif -%}
             </div>
           </div>
-          <footer class="card-footer">
-            <a href="{{ post.url | relative_url }}" class="card-footer-item">Читать</a>
-          </footer>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img 
+                    src="/assets/img/article-icon.svg" 
+                    alt="Article icon" 
+                    height="96" 
+                    width="96"
+                  />
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4" style="text-transform: uppercase;">{{ post.category | escape }}</p>
+                <p class="subtitle is-6">
+                  {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                  {{ post.date | date: date_format }}
+                </p>
+              </div>
+            </div>
+            <div class="content">
+              <p>{{ post.description | Без описания }}</p>
+            </div>
+            <a href="{{ post.url | relative_url }}" class="is-fullwidth button is-info is-primary">Читать</a>
+          </div>
         </div>
       </div>
       {%- endfor -%}
     </div>
   </div>
+  
+  <!-- RSS feed button -->
   <div class="columns is-centered mt-5">
     <div class="column is-one-fifth">
       <a href="{{ "/feed.xml" | relative_url }}" class="is-fullwidth button is-info is-primary">Подписка на RSS</a>
