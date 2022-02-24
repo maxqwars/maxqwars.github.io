@@ -25,9 +25,20 @@ $secondary-color: #fc997c;
 $family-primary: "GolosTextWebRegular", sans-serif;
 $family-code: "Ubuntu Mono", monospace;
 $primary: $accent-color-main;
-$link: $accent-color-alt;
+$link: $accent-color-main;
 $text: $text-color;
 $hr-background-color: $secondary-color;
+
+/* -------------------------------------------------------------------------- */
+/*                               Custom elements                              */
+/* -------------------------------------------------------------------------- */
+.profile-avatar-image {
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  height: 150px;
+  width: 150px;
+}
+
 
 
 /* Import Bulma */

@@ -16,7 +16,12 @@ layout: default
           <div class="card-image">
             <div class="image is-4by2">
               {%- if post.image -%}
-              <img src="{{ post.image }}" alt="{{ post.title | escape }}" />
+              <img 
+                src="{{ post.image }}" 
+                alt="{{ post.title | escape }}" 
+                width="760"
+                height="380"
+              />
               {%- endif -%}
               
               {%- if post.image == null -%}
