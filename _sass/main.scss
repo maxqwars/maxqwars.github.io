@@ -22,7 +22,9 @@ $secondary-color: #fc997c;
 /* -------------------------------------------------------------------------- */
 /*                                 Bulma theme                                */
 /* -------------------------------------------------------------------------- */
-$family-primary: "GolosTextWebRegular", sans-serif;
+$family-primary: "GolosTextWebRegular", -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
+  sans-serif;
 $family-code: "Ubuntu Mono", monospace;
 $primary: $accent-color-main;
 $link: $secondary-color;
@@ -38,8 +40,6 @@ $hr-background-color: $secondary-color;
   height: 150px;
   width: 150px;
 }
-
-
 
 /* Import Bulma */
 @import "bulma.sass";

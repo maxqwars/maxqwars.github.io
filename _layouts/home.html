@@ -52,7 +52,7 @@ layout: default
               </div>
             </div>
             <div class="content">
-              <p>{{ post.description | Без описания }}</p>
+              <p>{{ post.description | escape }}</p>
             </div>
             <a href="{{ post.url | relative_url }}" class="is-fullwidth button is-info is-primary">Читать</a>
           </div>
