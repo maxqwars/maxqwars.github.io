@@ -2,16 +2,12 @@
 layout: default
 ---
 
-<section class="section">
-  <div class="block">
-    <div class="container">
-      <div class="has-text-centered">
-        <h1 class="title" id="typing">{{ page.title | escape }}</h1>
-        <br />
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <h5 class="subtitle">{{ page.date | date: date_format }}</h5>
-      </div>
-    </div>
+<section class="hero is-primary">
+  <div class="hero-body has-text-centered">
+    <h1 class="title">{{ page.title | escape }}</h1>
+    <br />
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    <h5 class="subtitle" id="typing">{{ page.date | date: date_format }}</h5>
   </div>
 </section>
 

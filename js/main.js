@@ -18,6 +18,7 @@
 /* -------------------------------------------------------------------------- */
 /*                                   Imports                                  */
 /* -------------------------------------------------------------------------- */
+import initHighlight from "./functions/initHighlight";
 import initMobileMenu from "./functions/initMobileMenu";
 import initTypeIt from "./functions/initTypeIt";
 import TinyRouter from "./utils/TinyRouter";
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // UI / UX
   initMobileMenu();
   initTypeIt("#typing");
+  initHighlight()
 
   // TinyRouter
   const router = new TinyRouter(location.pathname);
