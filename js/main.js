@@ -23,6 +23,7 @@ import initMobileMenu from "./functions/initMobileMenu";
 import initTypeIt from "./functions/initTypeIt";
 import TinyRouter from "./utils/TinyRouter";
 import { PersonController, PersonModel, PersonView } from "./widgets/Person";
+import "simple-jekyll-search";
 
 /* -------------------------------------------------------------------------- */
 /*                           Register service-worker                          */
@@ -40,7 +41,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // UI / UX
   initMobileMenu();
   initTypeIt("#typing");
-  initHighlight()
+  initHighlight();
+
+  // TODO: Move SimpleJekyllSearch to external module
+  try {
+    var sjs = SimpleJekyllSearch({
+      searchInput: document.getElementById("search-input"),
+      resultsContainer: document.getElementById("results-container"),
+      json: "/search.json",
+    });
+  } catch (e) {
+    console.log("Failed init SimpleJekyllSearch", e);
+  }
 
   // TinyRouter
   const router = new TinyRouter(location.pathname);

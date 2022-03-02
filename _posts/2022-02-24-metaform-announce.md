@@ -4,7 +4,7 @@ title: "Metaform"
 keywords: "metaform,метаформа,typescript,rest-api,анилибрия"
 description: "Metaform - библиотека для работы с AniLibria REST API"
 image: "/assets/img/metaform-announce-article-cover.jpg"
-category: announce
+category: solution
 ---
 
 ## Metaform

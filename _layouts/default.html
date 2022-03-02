@@ -2,7 +2,7 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {%- include head.html -%}
   <body>
-    <!-- Google Tag Manager (noscript) -->
+    {%- if jekyll.environment == 'production' -%}
     <noscript>
       <iframe 
         src="https://www.googletagmanager.com/ns.html?id=GTM-58GRDGR"
@@ -11,7 +11,7 @@
         style="display:none;visibility:hidden">
       </iframe>
     </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    {%- endif -%}
     {%- include header.html -%}
     {{ content }}
     {%- include footer.html -%}

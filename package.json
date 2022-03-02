@@ -22,6 +22,7 @@
     "esbuild": "^0.14.23",
     "highlight.js": "^11.4.0",
     "npm-watch": "^0.11.0",
+    "simple-jekyll-search": "^1.10.0",
     "typeit": "^8.3.1",
     "workbox-cacheable-response": "^6.5.0",
     "workbox-expiration": "^6.5.0",
