@@ -15,25 +15,19 @@
 // You should have received a copy of the GNU General Public License
 // along with @maxqwars/pathogen.  If not, see <http://www.gnu.org/licenses/>.
 
-export default class TinyRouter {
-  constructor(currentPath) {
-    this.currentPath = currentPath;
-    this.routes = [];
-  }
+import "simple-jekyll-search";
 
-  register(path, callback) {
-    this.routes.push({
-      path,
-      callback,
-    });
-    return this;
-  }
+export default async function initSimpleJekyllSearch() {
 
-  run() {
-    this.routes.map(({ path, callback }) => {
-      if (path === this.currentPath || path === `${this.currentPath}.html`) {
-        callback();
-      }
+  const $searchInput = document.getElementById("search-input")
+
+  if ($searchInput !== null) {
+    document.getElementById("search-input").focus()
+    var sjs = SimpleJekyllSearch({
+      searchInput: document.getElementById("search-input"),
+      resultsContainer: document.getElementById("results-container"),
+      json: "/search.json",
     });
   }
+
 }

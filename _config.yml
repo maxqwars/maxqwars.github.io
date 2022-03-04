@@ -15,6 +15,13 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-paginate
+
+paginate: 6
+paginate_path: "/blog/page:num/"
+defaults:
+  - scope:
+      path: "blog/page"
 
 exclude:
   - LICENSE

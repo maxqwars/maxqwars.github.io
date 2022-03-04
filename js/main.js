@@ -23,7 +23,8 @@ import initMobileMenu from "./functions/initMobileMenu";
 import initTypeIt from "./functions/initTypeIt";
 import TinyRouter from "./utils/TinyRouter";
 import { PersonController, PersonModel, PersonView } from "./widgets/Person";
-import "simple-jekyll-search";
+import initSimpleJekyllSearch from "./functions/initSimpleJekyllSearch";
+import feather from 'feather-icons'
 
 /* -------------------------------------------------------------------------- */
 /*                           Register service-worker                          */
@@ -39,20 +40,11 @@ if ("serviceWorker" in navigator) {
 /* -------------------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
   // UI / UX
-  initMobileMenu();
-  initTypeIt("#typing");
-  initHighlight();
-
-  // TODO: Move SimpleJekyllSearch to external module
-  try {
-    var sjs = SimpleJekyllSearch({
-      searchInput: document.getElementById("search-input"),
-      resultsContainer: document.getElementById("results-container"),
-      json: "/search.json",
-    });
-  } catch (e) {
-    console.log("Failed init SimpleJekyllSearch", e);
-  }
+  initMobileMenu(); // Init Bulma mobile navigation
+  initTypeIt("#typing"); // Init TypeIt
+  initHighlight(); // Init Highlight.js, source code highligther
+  initSimpleJekyllSearch(); // Jekyll search
+  feather.replace() // Feather icons
 
   // TinyRouter
   const router = new TinyRouter(location.pathname);
@@ -61,6 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
   router
     .register("/", () => {
       new PersonController(new PersonView(), new PersonModel("maxqwars")).run();
+    })
+    .register("/search.html", () => {
+      // new SearchController(new SearchView(), new SearchModel()).run();
     })
     .run();
 });

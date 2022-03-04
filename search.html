@@ -1,25 +1,31 @@
 ---
-title: Поиск по сайту
+title: Поиск
 description: Поиск по блогу QWARS.DEV
 permalink: /search.html
 layout: default
 ---
 
-<div class="container">
+<section class="hero is-primary">
+  <div class="hero-body">
+    <p class="title">Поиск</p>
+    <p class="subtitle">Просто поиск по постам в блоге</p>
+  </div>
+</section>
+
+<section class="section">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-three-quarters">
-        <!-- <input class="input is-primary" type="text" placeholder="Primary input"> -->
-        <div class="m-5">
+        <div class="mt-5">
           <input
-          class="input is-primary is-medium"
-          type="text"
-          id="search-input"
-          placeholder="🧭 Поиск по блогу QWARS.DEV"
-        />
+            class="input is-primary is-medium"
+            type="text"
+            id="search-input"
+            placeholder="🧭 Поиск по блогу QWARS.DEV"
+          />
         </div>
         <ul id="results-container"></ul>
       </div>
     </div>
   </div>
-</div>
+</section>

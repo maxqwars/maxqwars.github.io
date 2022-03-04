@@ -1,0 +1,101 @@
+---
+layout: default
+title: Блог
+---
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      {% for post in paginator.posts %}
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-image">
+            <div class="image is-4by2">
+              {%- if post.image -%}
+              <img
+                src="{{ post.image }}"
+                alt="{{ post.title | escape }}"
+                width="760"
+                height="380"
+              />
+              {%- endif -%}
+              {%- if post.image == null -%}
+                <img
+                  src="/assets/img/post-without-image.svg"
+                  alt="{{ post.title | escape }}"
+                />
+              {%- endif -%}
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img
+                    src="/assets/img/article-icon.svg"
+                    alt="Article icon"
+                    height="96"
+                    width="96"
+                  />
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4" style="text-transform: uppercase">
+                  {{ post.category | escape }}
+                </p>
+                <p class="subtitle is-6">
+                  {%- assign date_format = site.minima.date_format | default:
+                  "%b %-d, %Y" -%} {{ post.date | date: date_format }}
+                </p>
+              </div>
+            </div>
+            <div class="content">
+              <p>{{ post.description | escape }}</p>
+            </div>
+            <a
+              href="{{ post.url | relative_url }}"
+              class="is-fullwidth button is-primary"
+            >
+              Читать
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <nav class="pagination is-centered">
+      <!-- Previous -->
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="pagination-previous">
+        <i data-feather="arrow-left"></i>
+      </a>
+      {% else %}
+      <a class="pagination-previous is-disabled">
+        <i data-feather="arrow-left"></i>
+      </a>
+      {% endif %}
+
+      <!-- Next -->
+      {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="pagination-next">
+        <i data-feather="arrow-right"></i>
+      </a>
+      {% else %}
+      <a class="pagination-next is-disabled">
+        <i data-feather="arrow-right"></i>
+      </a>
+      {% endif %}
+
+      <!-- List -->
+      <ul class="pagination-list">
+        <li><span class="pagination-ellipsis">&hellip;</span></li>
+        <li><a class="pagination-link is-current">{{ paginator.page }}</a></li>
+        <li><span class="pagination-ellipsis">&hellip;</span></li>
+      </ul>
+    </nav>
+  </div>
+</section>
