@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Pathogen"
-keywords: "pathogen,патоген,typescript,ionic"
+title: "Pathogen - Открытый клиент для Анилибрии"
+keywords: "pathogen,патоген,typescript,ionic,Анилибрия,AniLibria"
 description: "Pathogen - свободное ПО (лицензированное в соответствии с GPLv3) для работы с AniLibria"
 image: "/assets/img/pathogen-announce-article-cover.jpg"
 category: overview

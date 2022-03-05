@@ -1,5 +1,52 @@
-<div id="pulse-widget">
-  <div class="has-text-center">
-    <h1 class="title">Pulse widget not implemented</h1>
+<template id="pulse_repo_card_template">
+  <div class="column is-one-third">
+    <div class="box is-flex is-flex-direction-row">
+      <img
+        class="image is-48x48 mr-5"
+        src="/assets/img/repo-icon.svg"
+        id="proj_icon"
+        alt=""
+      />
+      <div class="is-flex is-flex-direction-column">
+        <div class="block">
+          <p class="title is-5 is-family-secondary" id="proj_name">Project</p>
+          <p class="subtitle is-6" id="proj_desc">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+            laudantium odio error velit.
+          </p>
+        </div>
+        <div class="field is-grouped is-grouped-multiline">
+          <div class="control">
+            <div class="tags has-addons">
+              <div class="tag is-primary">Starred</div>
+              <div class="tag" id="proj_stars">0</div>
+            </div>
+          </div>
+          <div class="control">
+            <div class="tags has-addons">
+              <div class="tag is-primary">Forks</div>
+              <div class="tag" id="proj_forks">0</div>
+            </div>
+          </div>
+          <div class="control">
+            <div class="tags has-addons">
+              <div class="tag is-primary">Licensed</div>
+              <div class="tag" id="proj_license">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</template>
+
+<section class="section">
+  <p class="title is-family-secondary">Pinned repositories</p>
+  <hr />
+  <div class="columns is-multiline" id="pinned_repos"></div>
+</section>
+
+<section class="section">
+  <p class="title is-family-secondary">User contribution activity</p>
+  <hr />
+</section>

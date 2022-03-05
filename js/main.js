@@ -1,20 +1,3 @@
-// Copyright (C) 2022 Maxim "maxqwars" Maximenko <maxqwars@gmail.com>
-//
-// This file is part of @maxqwars/pathogen.
-//
-// @maxqwars/pathogen is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// @maxqwars/pathogen is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with @maxqwars/pathogen.  If not, see <http://www.gnu.org/licenses/>.
-
 /* -------------------------------------------------------------------------- */
 /*                                   Imports                                  */
 /* -------------------------------------------------------------------------- */
@@ -24,7 +7,8 @@ import initTypeIt from "./functions/initTypeIt";
 import TinyRouter from "./utils/TinyRouter";
 import { PersonController, PersonModel, PersonView } from "./widgets/Person";
 import initSimpleJekyllSearch from "./functions/initSimpleJekyllSearch";
-import feather from 'feather-icons'
+import feather from "feather-icons";
+import { PulseController, PulseView, PulseModel } from "./widgets/Pulse";
 
 /* -------------------------------------------------------------------------- */
 /*                           Register service-worker                          */
@@ -42,9 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // UI / UX
   initMobileMenu(); // Init Bulma mobile navigation
   initTypeIt("#typing"); // Init TypeIt
-  initHighlight(); // Init Highlight.js, source code highligther
+  initHighlight(); // Init Highlight.js, source code highlighter
   initSimpleJekyllSearch(); // Jekyll search
-  feather.replace() // Feather icons
+  feather.replace(); // Feather icons
 
   // TinyRouter
   const router = new TinyRouter(location.pathname);
@@ -56,6 +40,17 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .register("/search.html", () => {
       // new SearchController(new SearchView(), new SearchModel()).run();
+    })
+    .register("/pulse.html", () => {
+      new PulseController(
+        new PulseView(),
+        new PulseModel([
+          "maxqwars/pathogen",
+          "maxqwars/metaform",
+          "maxqwars/maxqwars.github.io",
+          "maxqwars/qwars-clicker",
+        ])
+      ).run();
     })
     .run();
 });

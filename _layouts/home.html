@@ -1,88 +1,12 @@
 ---
 layout: default
 ---
+
+<!-- Profile widget markup -->
 {%- include github_widget.html -%}
 
-{%- if site.posts.size > 0 -%}
-<section class="section">
-  <div class="container">
-    <h1 class="title is-3">Latest blog updates</h1>
-    <hr />
-    <div class="columns is-multiline">
-      {%- for post in site.posts limit:3 -%}
-      <div class="column is-one-third">
-        <div class="card">
-          <div class="card-image">
-            <div class="image is-4by2">
-              {%- if post.image -%}
-              <img
-                src="{{ post.image }}"
-                alt="{{ post.title | escape }}"
-                width="760"
-                height="380"
-              />
-              {%- endif -%}
+<!-- Recent blog posts markup -->
+{%- include recent_blog_posts.html -%}
 
-              {%- if post.image == null -%}
-              <img
-                src="/assets/img/post-without-image.svg"
-                alt="{{ post.title | escape }}"
-              />
-              {%- endif -%}
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-48x48">
-                  <img
-                    src="/assets/img/article-icon.svg"
-                    alt="Article icon"
-                    height="96"
-                    width="96"
-                  />
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4" style="text-transform: uppercase;">{{ post.category | escape }}</p>
-                <p class="subtitle is-6">
-                  {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                  {{ post.date | date: date_format }}
-                </p>
-              </div>
-            </div>
-            <div class="content">
-              <p>{{ post.description | escape }}</p>
-            </div>
-            <a href="{{ post.url | relative_url }}" class="is-fullwidth button is-primary">Читать</a>
-          </div>
-        </div>
-      </div>
-      {%- endfor -%}
-    </div>
-  </div>
-</section>
-{%- endif -%}
-
-<div class="block">
-  <div class="container mt-5 is-flex is-justify-content-flex-end">
-    <div class="field has-addons">
-      <p class="control">
-        <a href="{{ "/feed.xml" | relative_url }}" class="button">
-          <span class="icon is-small">
-            <i data-feather="rss"></i>
-          </span>
-          <span>Подписка на RSS</span>
-        </a>
-      </p>
-      <p class="control">
-        <a href="/blog" class="button">
-          <span class="icon is-small">
-            <i data-feather="list"></i>
-          </span>
-          <span>К списку постов</span>
-        </a>
-      </p>
-    </div>
-  </div>
-</div>
+<!-- RSS and All posts buttons markup -->
+{%- include rss_and_blog_buttons.html -%}

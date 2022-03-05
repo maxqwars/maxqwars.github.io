@@ -1,6 +1,4 @@
 <header>
-  {%- assign default_paths = site.pages | map: "path" -%}
-  {%- assign page_paths = site.header_pages | default: default_paths -%}
   <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
@@ -17,18 +15,13 @@
           <span aria-hidden="true"></span>
         </a>
       </div>
-      {%- if page_paths -%}
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-end">
-          {%- for path in page_paths -%}
-          {%- assign my_page = site.pages | where: "path", path | first -%}
-          {%- if my_page.title -%}
-          <a href="{{ my_page.url | relative_url }}" class="navbar-item">{{ my_page.title | escape }}</a>
-          {%- endif -%}
-          {%- endfor -%}
+          <a href="/blog/" class="navbar-item">Blog</a>
+          <a href="/pulse.html" class="navbar-item">Pulse</a>
+          <a href="/search.html" class="navbar-item">Find</a>
         </div>
       </div>
-      {%- endif -%}
     </div>
   </nav>
 </header>
