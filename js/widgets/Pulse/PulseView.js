@@ -1,24 +1,74 @@
 export default class PulseView {
   constructor() {
+    // DOM
     this.$card_template = document.querySelector("#pulse_repo_card_template");
-    this.viewData = [];
     this.$pinnedRepos = document.querySelector("#pinned_repos");
+
+    // Data
+    this.viewData = [];
+
+    // Languages icons list
     this.icons = {
       unknown: "/assets/img/repo-icon.svg",
       sass: "/assets/img/repo-sass-icon.svg",
       javascript: "/assets/img/repo-javascript-icon.svg",
       typescript: "/assets/img/repo-typescript-icon.svg",
+      dart: "/assets/img/repo-dart-icon.svg",
+      php: "/assets/img/repo-php-icon.svg",
+      python: "/assets/img/repo-python-icon.svg",
     };
-    // console.log(this);
+  }
+
+  _beforeDescAssign(desc) {
+    return desc;
+  }
+
+  _getLanguageIconUrl(lang) {
+    let icon = "";
+    switch (lang) {
+      // sass / scss
+      case "Sass":
+        icon = this.icons.sass;
+        break;
+
+      // javascript
+      case "JavaScript":
+        icon = this.icons.javascript;
+        break;
+
+      // typescript
+      case "TypeScript":
+        icon = this.icons.typescript;
+        break;
+
+      // dart
+      case "Dart":
+        icon = this.icons.dart;
+        break;
+
+      // php
+      case "PHP":
+        icon = this.icons.php;
+        break;
+
+      // python
+      case "Python":
+        icon = this.icons.python;
+        break;
+
+      // unknown
+      default:
+        icon = this.icons.unknown;
+    }
+
+    return icon;
   }
 
   _createCard(data) {
-    // Get template
+    // Clone template
     const $card = this.$card_template.content.cloneNode(true);
 
-    console.log(data.language);
-
-    // Get element
+    // Get fragment elements
     const $projName = $card.querySelector("#proj_name");
     const $projDesc = $card.querySelector("#proj_desc");
     const $projStars = $card.querySelector("#proj_stars");
@@ -26,28 +76,15 @@ export default class PulseView {
     const $projLicense = $card.querySelector("#proj_license");
     const $icon = $card.querySelector("#proj_icon");
 
-    // Insert data
-    $projDesc.textContent = data.description;
+    // Insert data into elements
+    $projDesc.textContent = this._beforeDescAssign(data.description);
     $projName.textContent = data.name;
     $projStars.textContent = data.stargazersCount;
     $projForks.textContent = data.forks;
     $projLicense.textContent = data.license;
+    $icon.src = this._getLanguageIconUrl(data.language);
 
-    // Set icon
-    switch (data.language) {
-      case "Sass":
-        $icon.src = this.icons.sass;
-        break;
-      case "JavaScript":
-        $icon.src = this.icons.javascript;
-        break;
-      case "TypeScript":
-        $icon.src = this.icons.typescript;
-        break;
-      default:
-        $icon.src = this.icons.unknown;
-    }
-
+    // Return document fragment
     return $card;
   }
 

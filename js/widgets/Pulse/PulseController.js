@@ -6,9 +6,6 @@ export default class PulseController {
 
   async run() {
     const repos = await this.model.load();
-
-    console.log(repos);
-
     const data = repos.map((repo) => ({
       id: repo["id"],
       description: repo["description"],

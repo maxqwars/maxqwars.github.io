@@ -42,15 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // new SearchController(new SearchView(), new SearchModel()).run();
     })
     .register("/pulse.html", () => {
-      new PulseController(
-        new PulseView(),
-        new PulseModel([
-          "maxqwars/pathogen",
-          "maxqwars/metaform",
-          "maxqwars/maxqwars.github.io",
-          "maxqwars/qwars-clicker",
-        ])
-      ).run();
+      new PulseController(new PulseView(), new PulseModel()).run();
     })
     .run();
 });
