@@ -1,3 +1,5 @@
+import millify from 'millify'
+
 export default class PulseView {
   constructor() {
     // DOM
@@ -9,18 +11,18 @@ export default class PulseView {
 
     // Languages icons list
     this.icons = {
-      unknown: "/assets/img/repo-icon.svg",
-      sass: "/assets/img/repo-sass-icon.svg",
-      javascript: "/assets/img/repo-javascript-icon.svg",
-      typescript: "/assets/img/repo-typescript-icon.svg",
-      dart: "/assets/img/repo-dart-icon.svg",
-      php: "/assets/img/repo-php-icon.svg",
-      python: "/assets/img/repo-python-icon.svg",
+      unknown: "/assets/img/pulse/repo-icon.svg",
+      sass: "/assets/img/pulse/repo-sass-icon.svg",
+      javascript: "/assets/img/pulse/repo-javascript-icon.svg",
+      typescript: "/assets/img/pulse/repo-typescript-icon.svg",
+      dart: "/assets/img/pulse/repo-dart-icon.svg",
+      php: "/assets/img/pulse/repo-php-icon.svg",
+      python: "/assets/img/pulse/repo-python-icon.svg",
     };
   }
 
   _beforeDescAssign(desc) {
-    return desc;
+    return desc.length > 35 ? desc.substr(0, 32) + "..." : desc;
   }
 
   _getLanguageIconUrl(lang) {
@@ -79,8 +81,8 @@ export default class PulseView {
     // Insert data into elements
     $projDesc.textContent = this._beforeDescAssign(data.description);
     $projName.textContent = data.name;
-    $projStars.textContent = data.stargazersCount;
-    $projForks.textContent = data.forks;
+    $projStars.textContent = millify(data.stargazersCount);
+    $projForks.textContent = millify(data.forks);
     $projLicense.textContent = data.license;
     $icon.src = this._getLanguageIconUrl(data.language);
 
@@ -88,6 +90,7 @@ export default class PulseView {
     return $card;
   }
 
+  // Render
   async render(viewData) {
     this.viewData = viewData;
     const elements = this.viewData.map((d) => this._createCard(d));

@@ -5,10 +5,8 @@ import initHighlight from "./functions/initHighlight";
 import initMobileMenu from "./functions/initMobileMenu";
 import initTypeIt from "./functions/initTypeIt";
 import TinyRouter from "./utils/TinyRouter";
-import { PersonController, PersonModel, PersonView } from "./widgets/Person";
 import initSimpleJekyllSearch from "./functions/initSimpleJekyllSearch";
 import feather from "feather-icons";
-import { PulseController, PulseView, PulseModel } from "./widgets/Pulse";
 
 /* -------------------------------------------------------------------------- */
 /*                           Register service-worker                          */
@@ -30,19 +28,20 @@ document.addEventListener("DOMContentLoaded", () => {
   initSimpleJekyllSearch(); // Jekyll search
   feather.replace(); // Feather icons
 
-  // TinyRouter
-  const router = new TinyRouter(location.pathname);
-
-  // Register
-  router
+  new TinyRouter(location.pathname)
     .register("/", () => {
-      new PersonController(new PersonView(), new PersonModel("maxqwars")).run();
-    })
-    .register("/search.html", () => {
-      // new SearchController(new SearchView(), new SearchModel()).run();
+      import("./widgets/Hero").then(
+        ({ HeroController, HeroView, HeroModel }) => {
+          new HeroController(new HeroView(), new HeroModel()).run();
+        }
+      );
     })
     .register("/pulse.html", () => {
-      new PulseController(new PulseView(), new PulseModel()).run();
+      import("./widgets/Pulse").then(
+        ({ PulseController, PulseModel, PulseView }) => {
+          new PulseController(new PulseView(), new PulseModel()).run();
+        }
+      );
     })
     .run();
 });

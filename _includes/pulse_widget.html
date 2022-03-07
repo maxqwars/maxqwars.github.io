@@ -1,3 +1,10 @@
+<template id="pulse_lang_tag">
+  <div class="tags has-addons">
+    <div class="tag is-primary" id="tag_language">License</div>
+    <div class="tag" id="tag_counter">0</div>
+  </div>
+</template>
+
 <template id="pulse_repo_card_template">
   <div class="column is-one-third">
     <div class="box is-flex is-flex-direction-row">
@@ -9,16 +16,13 @@
       />
       <div class="is-flex is-flex-direction-column">
         <div class="block">
-          <p class="title is-5 is-family-secondary" id="proj_name">Project</p>
-          <p class="subtitle is-6" id="proj_desc">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-            laudantium odio error velit.
-          </p>
+          <p class="title is-5 is-family-secondary" id="proj_name"></p>
+          <p class="subtitle is-6" id="proj_desc"></p>
         </div>
         <div class="field is-grouped is-grouped-multiline">
           <div class="control">
             <div class="tags has-addons">
-              <div class="tag is-primary">Starred</div>
+              <div class="tag is-primary">Stars</div>
               <div class="tag" id="proj_stars">0</div>
             </div>
           </div>
@@ -30,7 +34,7 @@
           </div>
           <div class="control">
             <div class="tags has-addons">
-              <div class="tag is-primary">Licensed</div>
+              <div class="tag is-primary">License</div>
               <div class="tag" id="proj_license">0</div>
             </div>
           </div>
@@ -41,12 +45,12 @@
 </template>
 
 <section class="section">
-  <p class="title is-family-secondary">Pinned repositories</p>
+  <p class="title is-family-secondary">📌 Закреплённые репозитории</p>
   <hr />
   <div class="columns is-multiline" id="pinned_repos"></div>
 </section>
 
 <section class="section">
-  <p class="title is-family-secondary">User contribution activity</p>
+  <p class="title is-family-secondary">👁‍🗨 Активность вкладов</p>
   <hr />
 </section>
