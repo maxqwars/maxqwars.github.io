@@ -4,21 +4,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#333333" />
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  
+  <!-- Google verification code -->
   <meta
     name="google-site-verification"
     content="2sL6u_LOQ5VkohOBUnFnPDILrzmCurACAyMY4aIIalA"
   />
-  <meta
-    name="yandex-verification"
-    content="bf0bd730b94203c1"
-  />
-  {%- seo -%}
-  {%- feed_meta -%}
-  <link
-    rel="stylesheet"
-    href="{{"/assets/main.css" | relative_url }}"
-  >
-  <script src="/assets/js/main.min.js" defer></script>
+  <!-- Yandex verification code -->
+  <meta name="yandex-verification" content="bf0bd730b94203c1" />
+
+  <!-- SEO & Meta -->
+  {%- seo -%} {%- feed_meta -%}
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{"/assets/main.css" | relative_url }}" >
+
+  <!-- Main JS file -->
+  <script type="module" src="/assets/js/main.js" defer></script>
+
+  <!-- Google tag manager -->
   {%- if jekyll.environment == 'production' -%}
   <script>
     (function (w, d, s, l, i) {

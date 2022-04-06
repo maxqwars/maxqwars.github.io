@@ -4,9 +4,9 @@
     <p class="title is-family-secondary">Последние обновления</p>
     <hr />
     <div class="columns is-multiline">
-      {%- for post in site.posts limit:3 -%}
+      {%- for post in site.posts limit:6 -%}
       <div class="column is-one-third">
-        <div class="card">
+        <div class="card" data-aos="zoom-in">
           <div class="card-image">
             <div class="image is-4by2">
               {%- if post.image -%}

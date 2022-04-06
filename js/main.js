@@ -7,6 +7,7 @@ import initTypeIt from "./functions/initTypeIt";
 import TinyRouter from "./utils/TinyRouter";
 import initSimpleJekyllSearch from "./functions/initSimpleJekyllSearch";
 import feather from "feather-icons";
+import AOS from "aos";
 
 /* -------------------------------------------------------------------------- */
 /*                           Register service-worker                          */
@@ -27,6 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
   initHighlight(); // Init Highlight.js, source code highlighter
   initSimpleJekyllSearch(); // Jekyll search
   feather.replace(); // Feather icons
+
+  try {
+    AOS.init({
+      delay: 100,
+    });
+  } catch (e) {}
 
   new TinyRouter(location.pathname)
     .register("/", () => {

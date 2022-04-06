@@ -9,14 +9,15 @@
   },
   "scripts": {
     "bs": "browser-sync start -w -s ./_site -f ./_site",
-    "build:sw": "esbuild js/sw.js --minify --bundle --external:node_modules/* --outfile=assets/js/sw.js",
-    "build": "esbuild js/main.js --minify --bundle --external:node_modules/* --outfile=assets/js/main.min.js",
+    "build:sw": "esbuild js/sw.js  --minify --bundle --external:node_modules/* --outfile=assets/js/sw.js",
+    "build": "esbuild js/main.js --splitting --minify --bundle --external:node_modules/* --format=esm --outdir=assets/js/",
     "watch": "npm-watch",
     "start": "concurrently \"jekyll serve\" \"npm run bs\" \"npm run watch\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "aos": "^2.3.4",
     "browser-sync": "^2.27.7",
     "concurrently": "^7.0.0",
     "esbuild": "^0.14.23",
