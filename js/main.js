@@ -1,13 +1,14 @@
 /* -------------------------------------------------------------------------- */
 /*                                   Imports                                  */
 /* -------------------------------------------------------------------------- */
+
+import AOS from "aos";
+import TinyRouter from "./utils/TinyRouter";
+import feather from "feather-icons";
 import initHighlight from "./functions/initHighlight";
 import initMobileMenu from "./functions/initMobileMenu";
-import initTypeIt from "./functions/initTypeIt";
-import TinyRouter from "./utils/TinyRouter";
 import initSimpleJekyllSearch from "./functions/initSimpleJekyllSearch";
-import feather from "feather-icons";
-import AOS from "aos";
+import initTypeIt from "./functions/initTypeIt";
 
 /* -------------------------------------------------------------------------- */
 /*                           Register service-worker                          */
