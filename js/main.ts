@@ -34,4 +34,15 @@ function initUI() {
 /* HTML content loaded */
 document.addEventListener("DOMContentLoaded", () => {
   initUI();
+
+  // Hero components
+  import("./components/Hero")
+    .then((hero) => {
+      const { HeroController, HeroModel, HeroView } = hero;
+      new HeroController(
+        new HeroView({ containerId: "hero_widget" }),
+        new HeroModel({ configUrl: "/config/hero.json" })
+      ).run();
+    })
+    .catch((e) => console.log(e));
 });
