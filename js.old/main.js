@@ -53,3 +53,18 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .run();
 });
+
+import initMobileMenu from "./functions/initMobileMenu";
+
+// ! Register service-worker
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/assets/js/sw.js");
+  });
+}
+
+// ! On load
+document.addEventListener("load", () => {
+  /* UI / UX */
+  initMobileMenu();
+});

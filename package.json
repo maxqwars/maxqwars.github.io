@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "watch": {
-    "build": "js/**/*.js",
-    "build:sw": "js/sw.js"
+    "build": {
+      "patterns": ["js/**/*"],
+      "extensions": "js,ts"
+    },
+    "build:sw": "js/sw.ts"
   },
   "scripts": {
-    "bs": "browser-sync start -w -s ./_site -f ./_site",
-    "build:sw": "esbuild js/sw.js  --minify --bundle --external:node_modules/* --outfile=assets/js/sw.js",
-    "build": "esbuild js/main.js --splitting --minify --bundle --external:node_modules/* --format=esm --outdir=assets/js/",
+    "bs": "browser-sync start --no-open --no-notify -w -s _site -f _site",
+    "build:sw": "esbuild js/sw.ts  --minify --bundle --external:node_modules/* --outfile=assets/js/sw.js",
+    "build": "esbuild js/main.ts --splitting --minify --bundle --external:node_modules/* --format=esm --outdir=assets/js/",
     "watch": "npm-watch",
     "start": "concurrently \"jekyll serve\" \"npm run bs\" \"npm run watch\""
   },
