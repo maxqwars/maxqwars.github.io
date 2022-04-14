@@ -1,3 +1,5 @@
+import TinyRouter from "./utils/TinyRouter";
+
 /* Register service-worker */
 if (navigator["serviceWorker"]) {
   window.addEventListener("load", () => {
@@ -35,14 +37,18 @@ function initUI() {
 document.addEventListener("DOMContentLoaded", () => {
   initUI();
 
-  // Hero components
-  import("./components/Hero")
-    .then((hero) => {
-      const { HeroController, HeroModel, HeroView } = hero;
-      new HeroController(
-        new HeroView({ containerId: "hero_widget" }),
-        new HeroModel({ configUrl: "/config/hero.json" })
-      ).run();
+  new TinyRouter(location.pathname)
+    .add("/", () => {
+      // Hero components
+      import("./components/Hero")
+        .then((hero) => {
+          const { HeroController, HeroModel, HeroView } = hero;
+          new HeroController(
+            new HeroView({ containerId: "hero_widget" }),
+            new HeroModel({ configUrl: "/config/hero.json" })
+          ).run();
+        })
+        .catch((e) => console.log(e));
     })
-    .catch((e) => console.log(e));
+    .run();
 });
