@@ -50,5 +50,20 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch((e) => console.log(e));
     })
+    .add("/pulse.html", () => {
+      // Pulse component
+      import("./components/Pulse")
+        .then((pulse) => {
+          const { PulseController, PulseModel, PulseView } = pulse;
+          new PulseController(
+            new PulseView({
+              cardTemplateId: "#pulse_repo_card_template",
+              containerId: "#pinned_repos",
+            }),
+            new PulseModel({ configUrl: "/config/pulse.json" })
+          ).run();
+        })
+        .catch((e) => console.log(e));
+    })
     .run();
 });
