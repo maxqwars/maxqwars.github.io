@@ -31,6 +31,11 @@ function initUI() {
   import("./functions/mobileNavigation")
     .then((module) => module.default())
     .catch((e) => console.log(e));
+
+  /* highlight.js */
+  import("./addons/initHighlight")
+    .then((module) => module.default())
+    .catch((e) => console.log(e));
 }
 
 /* HTML content loaded */

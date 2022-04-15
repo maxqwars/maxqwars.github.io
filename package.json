@@ -5,7 +5,9 @@
   "main": "index.js",
   "watch": {
     "build": {
-      "patterns": ["js/**/*"],
+      "patterns": [
+        "js/**/*"
+      ],
       "extensions": "js,ts"
     },
     "build:sw": "js/sw.ts"
@@ -22,6 +24,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "browser-sync": "^2.27.7",
+    "chart.js": "^3.7.1",
     "concurrently": "^7.0.0",
     "esbuild": "^0.14.23",
     "feather-icons": "^4.28.0",
