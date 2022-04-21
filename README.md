@@ -22,7 +22,7 @@ After cloning the project, install the necessary dependencies.
 
 > $ bundle
 
-## Install node.js dependencies
+### Install node.js dependencies
 
 > $ npm install
 
