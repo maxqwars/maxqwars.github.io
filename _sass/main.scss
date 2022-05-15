@@ -46,14 +46,9 @@ $family-secondary: 'Fira Sans', sans-serif;
 $family-monospace: 'IBM Plex Mono', monospace;
 $body-background-color: $white;
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $family-primary;
-}
+/* -------------------------------------------------------------------------- */
+/*                                   Navbar                                   */
+/* -------------------------------------------------------------------------- */
 
-
-/* Bulma */
-@import "bulma.sass";
-
-
-/* highlight.js */
-@import url(https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css);
+@import "bulma";
+@import url(https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/xcode.min.css);

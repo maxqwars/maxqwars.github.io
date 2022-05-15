@@ -8,18 +8,15 @@ if (navigator["serviceWorker"]) {
 }
 
 /* Init UI / UX */
-function initUI() {
-  /* AOS - Animation on scroll */
+async function initUI() {
   import("aos")
     .then((module) => module.default.init())
     .catch((e) => console.log(e));
 
-  /* Feather Icons */
   import("feather-icons")
     .then((module) => module.default.replace())
     .catch((e) => console.log(e));
 
-  /* TypeIt */
   import("typeit")
     .then((module) => {
       const TypeIt = module.default;
@@ -27,21 +24,23 @@ function initUI() {
     })
     .catch((e) => console.log(e));
 
-  /* Bulma mobile menu */
   import("./functions/mobileNavigation")
     .then((module) => module.default())
     .catch((e) => console.log(e));
 
-  /* highlight.js */
   import("./addons/initHighlight")
     .then((module) => module.default())
     .catch((e) => console.log(e));
 }
 
-/* HTML content loaded */
+/*
+ * DOMContentLoaded
+ */
 document.addEventListener("DOMContentLoaded", () => {
+  // Init UI addons
   initUI();
 
+  // Init "mini-apps"
   new TinyRouter(location.pathname)
     .add("/", () => {
       // Hero components
