@@ -131,6 +131,15 @@ async function main() {
 main();
 ```
 
+## Пример
+
+<iframe src="https://codesandbox.io/embed/metaform-c02v5k?fontsize=14&hidenavigation=1&theme=light"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="metaform"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
 ## Ссылки
 
 - [Документация по AniLibria REST-API](https://github.com/anilibria/docs/blob/master/api_v2.md)
