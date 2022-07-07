@@ -17,10 +17,10 @@
     "build:sw": "esbuild scripts/sw.ts  --minify --bundle --external:node_modules/* --outfile=assets/js/sw.js",
     "build": "esbuild scripts/main.ts --splitting --minify --bundle --external:node_modules/* --format=esm --outdir=assets/js/",
     "watch": "npm-watch",
-    "start": "concurrently \"jekyll serve\" \"npm run bs\" \"npm run watch\""
+    "start": "concurrently \"bundle exec jekyll serve\" \"npm run bs\" \"npm run watch\""
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "aos": "^2.3.4",
     "browser-sync": "^2.27.7",

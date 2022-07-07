@@ -9,25 +9,34 @@ if (navigator["serviceWorker"]) {
 
 /* Init UI / UX */
 async function initUI() {
+  /* Animation On Scroll */
+  /* CSS animations on scroll */
   import("aos")
     .then((module) => module.default.init())
     .catch((e) => console.log(e));
 
+  /* Feather icons */
+  /* SVG icons pack */
   import("feather-icons")
     .then((module) => module.default.replace())
     .catch((e) => console.log(e));
 
-  import("typeit")
-    .then((module) => {
-      const TypeIt = module.default;
-      new TypeIt("#typing", { speed: 50, startDelay: 500 }).go();
-    })
-    .catch((e) => console.log(e));
+  /* TypeIt */
+  /* Text typing effect */
+  // import("typeit")
+  //   .then((module) => {
+  //     const TypeIt = module.default;
+  //     new TypeIt("#typing", { speed: 50, startDelay: 500 }).go();
+  //   })
+  //   .catch((e) => console.log(e));
 
+  /* Bulma mobile navigation */
   import("./functions/mobileNavigation")
     .then((module) => module.default())
     .catch((e) => console.log(e));
 
+  /* Highlight.js */
+  /* Code Highlighter */
   import("./addons/initHighlight")
     .then((module) => module.default())
     .catch((e) => console.log(e));

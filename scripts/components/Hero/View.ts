@@ -34,22 +34,61 @@ export default class HeroView {
   viewData: HeroViewData | undefined;
 
   constructor(options: HeroViewOptions) {
-    // Get container
-    this.$heroWidget = document.getElementById(options.containerId);
+    this.$heroWidget = document.getElementById(
+      options.containerId
+    ) as HTMLElement;
 
-    // Get HTML elements
-    this.$userImage = this.$heroWidget.querySelector("#user_avatar");
-    this.$userName = this.$heroWidget.querySelector("#user_name");
-    this.$userLogin = this.$heroWidget.querySelector("#user_login");
-    this.$userBio = this.$heroWidget.querySelector("#user_bio");
-    this.$userTwitter = this.$heroWidget.querySelector("#twitter_login");
-    this.$userFollowers = this.$heroWidget.querySelector("#followers");
-    this.$userFollowing = this.$heroWidget.querySelector("#following");
-    this.$userRepositories = this.$heroWidget.querySelector("#repositories");
-    this.$isHirable = this.$heroWidget.querySelector("#hirable");
-    this.$userLocation = this.$heroWidget.querySelector("#location");
-    this.$userGists = this.$heroWidget.querySelector("#gists");
-    this.$userCompany = this.$heroWidget.querySelector("#company");
+    this.init();
+  }
+
+  public init() {
+    this.$userImage = this.$heroWidget.querySelector<HTMLImageElement>(
+      "#user_avatar"
+    ) as HTMLImageElement;
+
+    this.$userName = this.$heroWidget.querySelector<HTMLElement>(
+      "#user_name"
+    ) as HTMLElement;
+
+    this.$userLogin = this.$heroWidget.querySelector<HTMLElement>(
+      "#user_login"
+    ) as HTMLElement;
+
+    this.$userBio = this.$heroWidget.querySelector<HTMLElement>(
+      "#user_bio"
+    ) as HTMLElement;
+
+    this.$userTwitter = this.$heroWidget.querySelector<HTMLElement>(
+      "#twitter_login"
+    ) as HTMLElement;
+
+    this.$userFollowers = this.$heroWidget.querySelector<HTMLElement>(
+      "#followers"
+    ) as HTMLElement;
+
+    this.$userFollowing = this.$heroWidget.querySelector<HTMLElement>(
+      "#following"
+    ) as HTMLElement;
+
+    this.$userRepositories = this.$heroWidget.querySelector<HTMLElement>(
+      "#repositories"
+    ) as HTMLElement;
+
+    this.$isHirable = this.$heroWidget.querySelector<HTMLElement>(
+      "#hirable"
+    ) as HTMLElement;
+
+    this.$userLocation = this.$heroWidget.querySelector<HTMLElement>(
+      "#location"
+    ) as HTMLElement;
+
+    this.$userGists = this.$heroWidget.querySelector<HTMLElement>(
+      "#gists"
+    ) as HTMLElement;
+
+    this.$userCompany = this.$heroWidget.querySelector<HTMLElement>(
+      "#company"
+    ) as HTMLElement;
   }
 
   public async render(viewData: HeroViewData) {

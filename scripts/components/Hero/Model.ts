@@ -1,11 +1,22 @@
+/*
+ * Declare HeroModel init options
+ */
 type HeroModelOptions = {
+  // Component configuration file URL
   configUrl: string;
 };
 
+/*
+ * Declare HeroModel config keys
+ */
 type HeroModelConfig = {
+  //? GitHub user login
   githubLogin: string;
 };
 
+/*
+ * Declare GH user data keys
+ */
 type GithubUserInfo = {
   avatar_url: string;
   bio: string;
@@ -34,6 +45,7 @@ export default class HeroModel {
   }
 
   public async init() {
+    //?  Load configuration from static JSON file
     await this._loadConfig(this._configUrl);
   }
 
@@ -43,6 +55,8 @@ export default class HeroModel {
       const config: HeroModelConfig = await req.json();
       this._config = config;
       this._githubUser = this._config.githubLogin;
+    } else {
+      throw Error("Failed fetch Hero component config");
     }
   }
 

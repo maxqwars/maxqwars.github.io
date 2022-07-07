@@ -5,6 +5,9 @@ type PulseViewOptions = {
   cardTemplateId: string;
 };
 
+/* 
+* Declare repository data keys
+*/
 type PulseViewData = {
   description: string;
   name: string;
@@ -21,17 +24,13 @@ class PulseView {
   private _icons: { [key: string]: string };
 
   constructor(options: PulseViewOptions) {
-    // DOM
-    // this.$card_template = document.querySelector("#pulse_repo_card_template");
-    // this.$pinnedRepos = document.querySelector("#pinned_repos");
-
     this._$card_template = document.querySelector(options.cardTemplateId);
     this._$pinnedRepos = document.querySelector(options.containerId);
 
     // Data
     this._viewData = null;
 
-    // Languages icons list
+    // ! Languages icons
     this._icons = {
       unknown: "/assets/img/pulse/repo-icon.svg",
       sass: "/assets/img/pulse/repo-sass-icon.svg",

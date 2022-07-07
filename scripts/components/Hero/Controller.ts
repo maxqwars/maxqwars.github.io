@@ -6,31 +6,35 @@ export default class HeroController {
   private _model: Model;
 
   constructor(view: View, model: Model) {
-    this._view = view;
-    this._model = model;
+    this._view = view; // HeroView instance
+    this._model = model; // HeroModel instance
   }
 
   public async run() {
-    await this._model.init();
-    const VD = await this._model.getGithubUserInfo();
+    await this._model.init(); // Prepare model
+    const ghUserData = await this._model.getGithubUserInfo(); // Fetch GitHub user data
 
-    if (VD === null) {
+    if (ghUserData === null) {
       throw new Error("Failed fetch");
     }
 
-    this._view.render({
-      avatarUrl: VD.avatar_url,
-      name: VD.name,
-      login: VD.login,
-      bio: VD.bio,
-      twitterUsername: VD.twitter_username,
-      following: VD.following,
-      followers: VD.followers,
-      publicRepos: VD.public_repos,
-      location: VD.location,
-      publicGists: VD.public_gists,
-      company: VD.company,
-      hirable: VD.hirable,
-    });
+    //? Remap
+    const viewData = {
+      name: ghUserData.name,
+      login: ghUserData.login,
+      bio: ghUserData.bio,
+      following: ghUserData.following,
+      followers: ghUserData.followers,
+      location: ghUserData.location,
+      company: ghUserData.company,
+      hirable: ghUserData.hirable,
+      avatarUrl: ghUserData.avatar_url,
+      twitterUsername: ghUserData.twitter_username,
+      publicRepos: ghUserData.public_repos,
+      publicGists: ghUserData.public_gists,
+    };
+
+    //? Call view.render(viewData)
+    this._view.render(viewData);
   }
 }

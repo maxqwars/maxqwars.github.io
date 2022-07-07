@@ -1,7 +1,13 @@
+/*
+ * Declare PulseModel config options
+ */
 type PulseModelOptions = {
   configUrl: string;
 };
 
+/*
+ * Declare repo data keys
+ */
 type RepoInfo = {
   id: number;
   name: string;
