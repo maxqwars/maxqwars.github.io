@@ -1,10 +1,12 @@
 ---
+title: metaform - библиотека для работы с REST API
+date: 2022-05-15 00:00:00 Z
+categories:
+- overview
 layout: post
-title: "metaform - библиотека для работы с REST API"
-keywords: "typescript,metaform,anilibria,rest-api,library"
-description: "metaform - открытая (MIT) библиотека для работы с REST API"
+keywords: typescript,metaform,anilibria,rest-api,library
+description: metaform - открытая (MIT) библиотека для работы с REST API
 image: "/assets/articles/metaform.jpg"
-category: overview
 ---
 
 # Введение

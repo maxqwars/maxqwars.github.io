@@ -1,6 +1,6 @@
 ---
 layout: home
-keywords: "maxqwars"
+keywords: maxqwars
 image: "/assets/img/site-cover.jpg"
 ---
 
