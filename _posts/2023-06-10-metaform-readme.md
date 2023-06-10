@@ -11,18 +11,6 @@ tags: [OpenSource, JavaScript, Сообщество, Metaform]
 
 <br>
 
-
-<!-- Budges -->
-![](https://img.shields.io/github/issues/maxqwars/metaform)
-![](https://img.shields.io/github/forks/maxqwars/metaform)
-![](https://img.shields.io/github/stars/maxqwars/metaform)
-![](https://img.shields.io/github/license/maxqwars/metaform)
-![](https://img.shields.io/librariesio/dependents/npm/@maxqwars/metaform)
-![](https://img.shields.io/github/release-date/maxqwars/metaform)
-![](https://img.shields.io/github/contributors/maxqwars/metaform)
-![](https://img.shields.io/github/package-json/v/maxqwars/metaform)
-
-
 ## О проекте
 
 Metaform - это библиотека с открытым исходным кодом для работы с AniLibria Web API. Разработана **без использования сторонних зависимостей** в производственной версии.
