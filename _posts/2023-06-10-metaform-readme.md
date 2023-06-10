@@ -11,8 +11,8 @@ tags: [OpenSource, JavaScript, Сообщество, Metaform]
 
 <br>
 
-<center>
 
+<!-- Budges -->
 ![](https://img.shields.io/github/issues/maxqwars/metaform)
 ![](https://img.shields.io/github/forks/maxqwars/metaform)
 ![](https://img.shields.io/github/stars/maxqwars/metaform)
@@ -22,7 +22,6 @@ tags: [OpenSource, JavaScript, Сообщество, Metaform]
 ![](https://img.shields.io/github/contributors/maxqwars/metaform)
 ![](https://img.shields.io/github/package-json/v/maxqwars/metaform)
 
-</center>
 
 ## О проекте
 
