@@ -18,9 +18,9 @@ timezone: Moscow+04 - Yenisei River
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: 🐍 QWARS 🔰 # the main title
+title: MAXQWARS # the main title
 
-tagline: Держу в курсе так сказать # it will display as the sub-title
+tagline: Coding just for fun # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Держу руку на пульсе, делюсь идеями и новостями, #в_курсе кароче.
@@ -37,7 +37,7 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Maksim Maksimenko
+  name: Maxim Maximenko
   email: maxqwars@outlook.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
