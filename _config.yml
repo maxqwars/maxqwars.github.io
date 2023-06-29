@@ -13,7 +13,7 @@ baseurl: "/"
 lang: ru-RU
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Moscow+04 - Yenisei River
+timezone: Moscow+07 - Krasnoyarsk
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
@@ -188,6 +188,7 @@ exclude:
   - rollup.config.js
   - node_modules
   - package*.json
+  - Makefile
 
 jekyll-archives:
   enabled: [categories, tags]
