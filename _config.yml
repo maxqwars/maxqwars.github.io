@@ -26,7 +26,7 @@ description: >- # used by seo meta and the atom feed
   Держу руку на пульсе, делюсь идеями и новостями, #в_курсе кароче.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: "https://maxqwars.github.io"
+url: "https://blog.maxqwars.xyz"
 
 github:
   username: maxqwars # change to your github username
